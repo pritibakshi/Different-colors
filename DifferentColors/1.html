@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colors</title>
+    
+    <style>
+    *{
+        padding: 0;
+        margin: 0;
+    }
+
+    .container{
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: antiquewhite;
+    }
+
+    .main{
+        width: 300px;
+        height: 130px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgb(110, 109, 109);
+        flex-direction: column;
+        border-radius: 20px ;
+
+    }
+
+    .b{
+        width:100px;
+        height: 50px;
+        color: aliceblue;
+        background-color: black;
+        border-radius: 10px ;
+        
+
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="main">
+            <div class="text">#</div>
+            <input type="button" value="click me" class="b" id="btn" onclick="change()">
+        </div>
+    </div>
+    <!-- Min-000000(BLACK)  Max-FFFFFF(WHITE) -->
+
+    <script>
+        const btn=document.getElementById("btn");
+        const container= document.querySelector(".container");
+        const text = document.querySelector(".text");
+
+        function change(){
+            const random=Math.floor(Math.random()*0xFFFFFF);
+            const color="#" + random.toString(16);
+            text.innerHTML=color;
+            container.style.backgroundColor=color;
+        }
+    </script>
+</body>
+</html>
